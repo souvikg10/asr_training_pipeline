@@ -8,6 +8,8 @@ from download_file import DownloadFiles
 from extract_wav import ExtractFiles
 import numpy
 import extract_mfcc_features as emfc
+import extract_text_features as etf 
+import feature_combination as fc 
 
 if __name__ == '__main__':
     # Running as standalone python application
@@ -21,7 +23,11 @@ if __name__ == '__main__':
    extracted_files = extract_wav.get_wav_files(duration=config_data['Duration'])
 
    mfcc_features = emfc.extractMFCCfeatures(extracted_wav_files=extracted_files,number_mfcc_features=config_data['NumberMFCC'])
-   print((mfcc_features))
+   
+   text_features = etf.extract_text_features(zipfile=zipfile)
+   
+   feature_by_batch = fc.feature_combination(batchsize=config_data['Batch_size'],mfcc_features=mfcc_features,text_features=text_features)
+
 
 
    

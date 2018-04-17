@@ -1,5 +1,6 @@
 {
 	"URL":"http://festvox.org/cmu_arctic/cmu_arctic/packed/cmu_us_jmk_arctic-0.95-release.zip",
 	"Duration":4,
-	"NumberMFCC":20
+	"NumberMFCC":20,
+	"Batch_size":10
 }
