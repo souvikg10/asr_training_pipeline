@@ -7,7 +7,5 @@ import numpy as np
 
 def feature_combination(batchsize, mfcc_features,text_features):
 	features = np.concatenate((mfcc_features,text_features))
-	print(features.shape)
-	feature_by_batch = np.array_split(features,batchsize)
-
-	return feature_by_batch
+	
+	return features
